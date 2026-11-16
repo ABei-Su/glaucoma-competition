@@ -46,9 +46,9 @@ class Budgeted448Tests(unittest.TestCase):
             first.write_bytes(b'fixed r50');second=root/'candidate.pt';second.write_bytes(b'fixed448')
             config=root/'config.json'
             with patch.object(run_v11b,'ROOT',root):identity=run_v11b.bundle(config,second)
-            self.assertTrue(identity);spec=json.loads(config.read_text())
+            self.assertTrue(identity);spec=json.loads(config.read_text(encoding='utf-8'))
             self.assertEqual([m['tta'] for m in spec['models']],[True,False])
-            spec['models'][1]['tta']=True;config.write_text(json.dumps(spec))
+            spec['models'][1]['tta']=True;config.write_text(json.dumps(spec), encoding='utf-8')
             with self.assertRaises(ValueError):protocol.inference_identity(config)
 
     def test_plain_evaluation_recovers_known_probabilities_with_one_forward_per_batch(self):

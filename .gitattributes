@@ -2,3 +2,15 @@
 *.py text eol=lf
 *.md text eol=lf
 *.ps1 text eol=crlf
+
+# Preserve the byte-level hashes recorded in reports/v12_derivation.json.
+/tools/finalize_v11.py -text
+/tools/finalize_v12.py -text
+/tools/predict_v11.py -text
+/tools/predict_v12.py -text
+/tools/run_v11.py -text
+/tools/run_v12.py -text
+/train.py -text
+/train_focal.py -text
+/v11_protocol.py -text
+/v12_protocol.py -text

@@ -1,6 +1,6 @@
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import tempfile
 import unittest
 import torch
@@ -50,8 +50,11 @@ class V12ContractTests(unittest.TestCase):
         record=json.loads((root/'reports/v12_derivation.json').read_text(encoding='utf-8'))
         self.assertEqual(len(record['files']),5)
         for item in record['files']:
-            self.assertEqual(hashlib.sha256(Path(item['source']).read_bytes()).hexdigest(),item['source_sha256'])
-            self.assertEqual(hashlib.sha256(Path(item['target']).read_bytes()).hexdigest(),item['target_sha256'])
+            for role in ('source', 'target'):
+                archived_path = PureWindowsPath(item[role])
+                project_index = archived_path.parts.index('glaucoma_project')
+                checkout_path = root.joinpath(*archived_path.parts[project_index + 1:])
+                self.assertEqual(hashlib.sha256(checkout_path.read_bytes()).hexdigest(), item[role + '_sha256'])
 
 
 if __name__=='__main__':unittest.main()

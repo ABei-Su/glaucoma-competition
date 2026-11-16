@@ -1,0 +1,38 @@
+{
+  "files": [
+    {
+      "source": "E:\\bisai\\glaucoma_project\\train.py",
+      "source_sha256": "acb77166561993a1c6a82832d3935f574c44be8992e33d1efdcfb680c0529c48",
+      "target": "E:\\bisai\\glaucoma_project\\train_focal.py",
+      "target_sha256": "5d49685bf257a61df6ba762071adf9c50af5aead18e5c710eedfb2ae7deed0da"
+    },
+    {
+      "source": "E:\\bisai\\glaucoma_project\\v11_protocol.py",
+      "source_sha256": "047175090987d0eb86d224125700e81d45fda060458f9dccdd5a0a2b153ffccb",
+      "target": "E:\\bisai\\glaucoma_project\\v12_protocol.py",
+      "target_sha256": "81f234408306a2711b34db56ad0f857f77ff153c387c3121427709e5d62cb670"
+    },
+    {
+      "source": "E:\\bisai\\glaucoma_project\\tools\\run_v11.py",
+      "source_sha256": "cace1b8a5cfedb128c49ad3fbeb2a62452ac44c637c850716ac56ad78e055b0b",
+      "target": "E:\\bisai\\glaucoma_project\\tools\\run_v12.py",
+      "target_sha256": "cd0166694b0fdf31ea0a7155544796fef735645292665941f2f9a7eddbe551e5"
+    },
+    {
+      "source": "E:\\bisai\\glaucoma_project\\tools\\finalize_v11.py",
+      "source_sha256": "acb96ad6b286a3a933f5bd9b153ed6f535f8ca3ae9f3a1fe239e2e8b9374f11e",
+      "target": "E:\\bisai\\glaucoma_project\\tools\\finalize_v12.py",
+      "target_sha256": "4f811c6da3edbc7508b26d001e699678b2b136f2e459989f571eee90b15f5152",
+      "initial_target_sha256": "46d0c3f08e271c672b5818ac2becedce7b240a2543992b388a037a24b8ac3ca2"
+    },
+    {
+      "source": "E:\\bisai\\glaucoma_project\\tools\\predict_v11.py",
+      "source_sha256": "827398eedcff703e4ad37937eac39d76acec409d22f5238ca48c7bd1006adf1c",
+      "target": "E:\\bisai\\glaucoma_project\\tools\\predict_v12.py",
+      "target_sha256": "37ddc51f35313e3db4fb70bfd44211c2cc841869f516126b8353b16f293c9ca3"
+    }
+  ],
+  "changes": "New v12 namespace at384; isolated focal trainer/loss/scope/exact-resume/public SHA; unchanged image inference and TTA pair",
+  "preflight_correction": "Before resources/fitting: reviewer found inherited Chinese ordinal; delivery_directory and user note corrected to twelfth version, regression added; generator updated consistently",
+  "generator_sha256": "1ed6b69d23d5b5e2a20c09609d58907ab645c8822ac7569dfa6f3e7b9213a03d"
+}
