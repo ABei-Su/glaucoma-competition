@@ -1,0 +1,9 @@
+# ADR-011: separate budgeted shape after a resource-only rejection
+
+2026-10-28. The fixed v11 double-TTA shape failed its one declared timing campaign before any448supervised fitting. Preserve its sources/preflight/status/resource evidence. Continued user authorization permits a new explicit engineering design, not erasure or repeated timing of that failed shape.
+
+v11b retains the same448training recipe and data boundaries but fixes R50_TTA+CN448_plain. Internal comparison now evaluates CN448_plain against the original CN384_TTA reference, so it cannot be called a pure resolution effect. No quality result selected this shape. A new one-shot resource campaign must qualify it; no further shape is appended if it fails.
+
+For immutable prior evidence, new modules are mechanically derived into new filenames/artifact namespaces. reports/v11b_derivation.json binds original and new source bytes; tmp/derive_v11b.py records the finite transformation. This deliberate small source duplication preserves the already frozen rejected implementation rather than altering shared old interfaces. Shared model/data/train/predict modules are reused unchanged; future refactoring may consolidate only after historical evidence is safely preserved, not during this experiment.
+
+The only semantic changes beyond names are the second member's fixedtta=False and new candidate plain evaluation; resource/integrity/state/full-epoch/data/atomic delivery rules remain as declared. A synthetic known-probability test checks that plain evaluation performs exactly one model forward per batch and preserves row order. No new production dependency, old schema migration or automatic upload. New independent review and full verification precede source freeze and resources. All E: paths, raw/old results and no-test-fitting constraints remain mandatory.

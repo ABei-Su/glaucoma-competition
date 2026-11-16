@@ -1,0 +1,7 @@
+# v11 fixed double-TTA shape rejected before training
+
+2026-10-28. Predeclared448/batch16 capacity probe passed:4396387328allocated bytes,70.797196synthetic images/s. The single fixed R50_384_TTA+CN448_TTA raw-image timing campaign produced mean102.63348266666662ms over100images+5warmup/3rounds, repeat delta0 and conservative runtime205717290bytes. The100ms gate failed; coordinator and finalizer terminated not_promoted. No supervised v11 run or testCSV was created, no new model quality outcome was inspected, and no campaign was repeated for a favorable time.
+
+Preserve output/v11/preflight_inputs.json, resource-only public initialization/config, reports/v11_resource_probe.json and both terminal status/log records. This is a resource finding, not proof that448 would improve or fail predictive discrimination. Exact latency varies with hardware/images; current locally measured protocol is the declared eligibility rule and has not been waived. OfficialT4 remains unverified.
+
+User continues to authorize optimization. A separately documented v11b may change its deployment shape before any new quality evaluation, preserving this rejected v11 shape and source bytes. It must use distinct run/output/status/config/source names and new preflight measurement, not overwrite/relabel/retry the failed campaign. The reason for changing shape is the measured duplicate-inference resource cost, not labels, test predictions, leaderboard feedback or a desired quality result. The old v11 monitoring task was removed after its terminal resource record.

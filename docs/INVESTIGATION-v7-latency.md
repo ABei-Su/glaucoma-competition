@@ -1,0 +1,7 @@
+# v7 latency failure investigation
+
+The fixed v7 full-training run completed all eight epochs and preserved its preselected epoch-6 checkpoint. Final selection stopped before official-valid accuracy comparison or test prediction: the frozen pair+horizontal-TTA configuration measured 108.90455633333335 ms, above the unchanged 100 ms local gate. The initial resource probe measured 96.40677866666695 ms. Neither result establishes official T4 compliance.
+
+Bounded diagnosis declared before rerunning: preserve the failure; use the same first 5 official-valid warmup images and next 100 measured images, batch 1 and three rounds, with no labels or accuracy-based decisions. Measure the unchanged predictor once under selection's default cuDNN deterministic=False and once under the initial resource probe's deterministic=True, with benchmark=False in both. Record every round and prediction disagreement, GPU state and content fingerprints. Then profile the read/crop, tensor conversion/transfer, two model forward+TTA operations and CSV write boundaries on the same images. Do not repeat until a convenient pass or change models, threshold, fusion weights, sample set or limit.
+
+If the discrepancy has no demonstrated code/configuration cause, retain it as a real resource failure and design a separately documented deployment revision; do not silently bypass the gate. A changed inference implementation must pass equivalence/regression checks, full validation and fresh packaged timing before any delivery. All data, trained weights and prior deliveries remain unchanged.

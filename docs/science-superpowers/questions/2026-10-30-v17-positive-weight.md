@@ -1,0 +1,3 @@
+# Fixed weighted-BCE question
+
+Under the user-delegated final-sprint scope, does changing only R50 training BCE positive_weight1 to2, while preserving v15's public initialization/seed/eight-epoch schedule/augmentation/data, improve reused rawvalid AUROC without decreasing AP? H0 no joint improvement; H1 strictly higher AUROC and nonlower AP. Unit=image, fixed officialtrain51396 and officialvalid5849; no medical inference from the audit. Existing saved train/valid audit is descriptive hypothesis generation. No test/model-threshold/leaderboard fitting. This is exploratory, not confirmatory. Exact execution and stopping rules are frozen in the v17 plan before v17 training outcomes.

@@ -1,0 +1,3 @@
+# Final sprint question
+
+Does a fresh, fixed eight-epoch, unweighted BCE R50 recipe improve raw official-validation AUROC without lowering AP compared with the prior R50, alone and in a fixed equal-average pair with the existing CN8? Existing validation is reused; the study is exploratory and no independent or causal claim follows. Unit is an image; patient independence is unknown. H0: no joint improvement; directional H1: AUROC rises and AP does not decline. All official training rows and all official validation rows are retained. The user has already delegated experimental choices and execution; no extra approval wait is introduced. Recipe, exclusions, stopping and delivery rules are in the companion plan.

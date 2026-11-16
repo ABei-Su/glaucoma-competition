@@ -1,0 +1,4 @@
+# v14 finalization protocol
+Separate one-shot tools/finalize_v14.py; prior frozen sources unchanged.
+States created -> resources -> validation -> prediction -> awaiting_review; any nonterminal -> failed. awaiting_review and failed terminal, no retry/replay; exclusive finalization directory plus exclusive launch reservation. Independent review is required before declaring deliverable.
+Source/config/training and validation/test CSV identities are frozen before forward passes; bound files checked at each phase. Actual model metadata must prove epoch16 and full scope. All six-hour training evidence retained. Finalizer deadline4h with per-image checks plus external process-tree watchdog. Abnormal interruption is preserved and audited; no automatic lock clearing or remeasurement. No quality-based rejection or shape/threshold search. Resource failure aborts delivery. Partial artifacts are never complete.

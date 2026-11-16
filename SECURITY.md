@@ -1,0 +1,2 @@
+# Security and competition data
+Do not upload competition data or patient metadata to external services. Do not commit images, labels, model checkpoints, secrets or local configuration. Download only public declared non-medical pretrained weights and verify the official digest. Archive extraction validates paths and rejects symlinks; filenames in labeled CSVs must be basenames. Keep source zip immutable. Load resume checkpoints only from this project, never untrusted submissions. Report suspected leakage before training.

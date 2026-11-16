@@ -1,0 +1,9 @@
+# Official target environment; local training versions are recorded separately.
+torch==2.10.0
+torchvision==0.25.0
+numpy==1.26.4
+Pillow==10.4.0
+scikit-learn==1.6.1
+scipy==1.13.1
+joblib==1.4.2
+threadpoolctl==3.5.0

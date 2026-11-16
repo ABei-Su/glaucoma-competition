@@ -1,0 +1,3 @@
+# ADR-018: one fixed pair export after fresh R50 16-epoch training
+
+Accepted under user's explicit approval of the single-candidate design. Reuse unchanged trainer and Predictor; new v18-only wrappers/finalizer/tests. Fixed epoch16 and BCEpos1, no init/resume, officialtrain only. One pair with existing CN8 and direct v15 pair comparison. No new API/schema/dependency, no older artifacts modified. Six-hour training and four-hour finalization caps with persistent launch reservations, real process exit guards, no retry. Delivery remains awaiting independent review. Scientific scope and evidence requirements are fixed in science-superpowers/plans/2026-11-05-v18-r50-longer.md.

@@ -1,0 +1,9 @@
+# v8 skeptical review and provenance addendum
+
+Read-only independent review found no critical or important defect in the fixed experiment: training-only profile/legacy behavior, resume guard, clean+worst internal gates, no exposed R50 in internal evaluation, fixed full-training epoch, final descriptive filter before test prediction, required R50 initialization and declarations matched the plan. The initial full suite passed55 tests; no efficacy conclusion was made.
+
+Two minor auxiliary-input binding gaps were identified during epoch1: the old v5 selection report supplies the clean control reproduction value but was absent from frozen evidence; the generic bootstrap previously took labels from an old prediction CSV rather than explicitly bound audited official-valid labels. No changed input or wrong result was observed.
+
+Resolution before any v8 comparison or bootstrap: preserve frozen_inputs.initial.json byte-for-byte with its original SHA; append the old v5 report and current official-valid CSV to frozen evidence without changing or removing existing entries. Add checksummed sources of the new bootstrap call and its implementation. V8 explicitly supplies current official valid.csv to bootstrap, which records and rechecks the label SHA; the conservative-gate evidence also binds that file. Other versions retain their old default source. A regression test first reproduced the missing explicit-label interface, then verifies operation without any historical prediction file and exact source SHA.
+
+The live training model, augmentation, seed, optimizer, split, epoch schedule and acceptance thresholds were not altered; training need not restart. This is a provenance addendum, not a post-result method change. The initial frozen record remains packaged for audit. All planned validity/clinical/generalization limitations still apply.
